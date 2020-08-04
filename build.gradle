@@ -20,6 +20,20 @@ plugins {
 }
 
 subprojects { project ->
+  repositories {
+    maven {
+        url = "https://maven.aliyun.com/repository/public"
+        mavenContent { releasesOnly() }
+    }
+    maven {
+        url = "https://pixel.sankuai.com/repository/group-releases"
+        mavenContent { releasesOnly() }
+    }
+    maven {
+        url = "https://pixel.sankuai.com/repository/group-snapshots"
+        mavenContent { snapshotsOnly() }
+    }
+  }
   group = "com.netflix.spinnaker.front50"
   apply plugin: 'io.spinnaker.project'
 
